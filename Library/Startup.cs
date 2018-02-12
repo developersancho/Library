@@ -29,7 +29,12 @@ namespace Library
             services.AddSingleton(Configuration);
             services.AddScoped<ILibraryAsset, LibraryAssetService>();
             services.AddScoped<ICheckout, CheckoutService>();
-
+            services.AddScoped<IPatron, PatronService>();
+            services.AddScoped<ILibraryCard, LibraryCardService>();
+            services.AddScoped<ILibraryBranch, LibraryBranchService>();
+            services.AddScoped<IBook, BookService>();
+            services.AddScoped<IVideo, VideoService>();
+            services.AddScoped<IStatus, StatusService>();
             services.AddDbContext<LibraryContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
         }
